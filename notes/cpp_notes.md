@@ -22,4 +22,93 @@
   - finally, linker outputs the desired output file 
     - typically, will be an executable file that can be launched (or a lib file) 
     ![img.png](img.png)
+
+### the standard library 
+- provides useful capabilities for use in programs 
+- __<iostream>__ one of most commonly used parts  
+  - contains functionality for printing text on a monitor & getting keyboard input from user 
+
+### 3rd party libs 
+- can optionally link 3rd party libs - those aside from standard library 
+  
+
+### projects 
+- create a __new__ project for each new program written 
+- generally rec'd to create a __new__ workspace for each program 
+  - simpler & less chance of something going wrong 
+  - __ex.__ 
+    - if we're writing a game & wanted to have a separate executable for single player & multiplayer --> create two projects  
+
+### configuring your compiler: Build configs 
+- __build config__ (aka __build target__) = collection of project settings that determines how IDE will build your project 
+- includes things like: 
+  - name of executable 
+  - what dirs the IDE will look in for other code & lib files 
+  - whether to keep or strip out debug info 
+  - how much to have compiler optimize your program 
+  - will want to leave default unless you have reason to change 
+- when creating a new project in an IDE 
+  - ide will setup 2 diff build configs: 
+    - release 
+    - debug 
+  - __debug config__ 
+    - designed to help you debug your program 
+    - generally one used when writing programs
+    - turns off all optimizations 
+    - includes debugging info 
+      - makes programs larger & slower (easier to debug)
+    - selected as active config by default 
+  - __release config__ 
+    - designed to be used when releasing program to public 
+    - typically optimized for size & performance 
+    - useful for testing performance of code 
+  - __best practice__ 
+    - use _debug_ build when developing 
+    - use _release_ build when you're ready to release executable to others, or want to test performance 
+- __compiler extensions__ 
+  - CPP standard defines rules about how programs should behave in specific circumstances 
+    - in most cases - compilers will follow these rules 
+    - many compilers implement their own changes to the language, often to enhance compatibility with other versions of the lang 
+      - these compiler specific behaviors are called _compiler extensions_ 
+  - writing a program that makes use of compiler extensions allows you to write programs that are 
+    incompatible w/ C++ standard 
+    - generally won't compile on other compilers (that don't support those same extensions)
+      - if they do - wont run correctly 
+  - b/c compiler extensions are __never__ necessary & cause your programs to be non-compliant w/ C++ standards: 
+    - recommended to turn __off__ 
+  - __best practice__ 
+    - disable compiler extensions to ensure programs remain compliant w/ C++ standards & will work on any system 
+- __warning & error levels__ 
+  - __diagnostic error__ 
+    - compiler halts compilation b/c it either cannot proceed or deems error serious enough to step 
+    - aka compilation/compiler errors 
+  - __diagnostic warning__ 
+    - compiler decides _not_ to halt compilation 
+    - issue simply ignored & compilation proceeds 
+  - diagnostic messages typically contain both filename & line number where compiler found the issue 
+    plus some text about what was expected vs. what was found 
+  - __best practice__ 
+    - dont let warnings pile up 
+    - resolve them as they're encountered (as if they were errors)  
+    - can overshadow important warnings 
+    - can request compiler to be more assertive about providing warnings - generally good idea to do so
+    - __gcc__ (turn warning levels up)
+      ```-Wall -Weffec++ -Wextra -Wconversion -Wsign-conversion``` 
+  - treat warnings as errors 
+    - possible to do so in IDE 
+    - for __gcc__
+      ```-Werror``` 
+
+### choosing a language standard 
+- compiler will default to a standard (usually C++14 or C++17)
+- in most pro. settings, will use standard 1-2 versions behind latest 
+- for personal projects - recommended using __latest__ finalized standard 
+- setting a lang standard in gcc/g++/Clang: 
+  - use compiler options
+  ```
+  -std=c++17
+  -std=c++20
+  -std=c++23
+  ```
+  
   
