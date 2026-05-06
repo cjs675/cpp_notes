@@ -1,0 +1,8 @@
+# ninja log v7
+1	393	1777945972633304631	CMakeFiles/cop_3003.dir/main.cpp.o	afeac3462395a3d2
+3	260	1777946623614929576	cop_3003	53edd8501f8fd887
+4	484	1777946090698293593	CMakeFiles/cop_3003.dir/helloWorld.cpp.o	4ee4649714277df1
+1	95	1778102932562625842	build.ninja	d0a38850764a59cc
+1	95	1778102932561880132	/Users/chrissilva/environment/school/cop_3003/cmake-build-debug/cmake_install.cmake	d0a38850764a59cc
+2	176	1778102932562625842	build.ninja	d0a38850764a59cc
+2	176	1778102932562625842	/Users/chrissilva/environment/school/cop_3003/cmake-build-debug/cmake_install.cmake	d0a38850764a59cc

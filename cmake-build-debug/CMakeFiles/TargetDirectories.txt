@@ -1,0 +1,4 @@
+/Users/chrissilva/environment/school/cop_3003/cmake-build-debug/CMakeFiles/helloWorld.dir
+/Users/chrissilva/environment/school/cop_3003/cmake-build-debug/CMakeFiles/cop_3003.dir
+/Users/chrissilva/environment/school/cop_3003/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/chrissilva/environment/school/cop_3003/cmake-build-debug/CMakeFiles/rebuild_cache.dir
