@@ -122,7 +122,7 @@ int main() {
 - character input 
 - reads input from keyboard 
 - typically use the __extraction__ operator __>>__ to put the input data in a variable (which can be used in subsequent statements)
-```
+```c++
 #include <iostream> 
 
 int main() 
@@ -137,6 +137,23 @@ int main()
   return 0
 }
 ```
+- __note:__ 
+  - no need to output ('\n') when accepting a line of input 
+  - user will need to press __enter__ key to have their input accepted & this will move their cursor to the next line of the console 
+
+- just as it is possible to output more than one bit of text in a single line, it's also possible to input more than one value on a single line
+[View double char input example](../code_tests/doubleCharIn/main.cpp)
+
+### __std::cin__ is buffered 
+- adding data to the __end__ of a buffer & removing it from the front of a buffer ensures data is processed in the same order in which it was added 
+  - aka __FIFO__ 
+- similarly, _inputting_ data is also a two stage process: 
+  1. individual chars entered as input are added to the end of an input buffer (inside __std::cin__)
+    - the enter key (pressed to submit the data) also stored as a __'\n'__ character 
+  2. the extraction operator '__>>__' removes characters from the front of the input buffer & converts them into a value that is assigned (via copy-assignment) to the associated value 
+    - this variable can then be used in subsequent statements 
+- each line of input data in the input buffer is terminated by a __'\n'__ character 
+[View example showing different extraction methods]()
 
 
 
