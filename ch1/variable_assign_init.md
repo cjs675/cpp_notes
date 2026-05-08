@@ -171,7 +171,69 @@ int width {}; // value initialization / zero-initialization to value 0
 - __best practice__ 
   - prefer direct-list-initialization or value initialization to initialize variables 
 
-#### when should I initialize with { 0 } vs {}? 
+#### when should I initialize with { 0 } vs {}?  
+- use __direct list initialization__ when you're actually using the initial value 
+```c++
+int x { 0 };    // direct list initialization with value 0
+std::cout << x; // 0 value being used here 
+```
+- use __value initialization__ when the object's value is __temporary__ and will be replaced: 
+```c++
+int x {};       // value initialization
+std::cin >> x;  // we're immediately replacing that value so an explicit 0 would be meaningless 
+```
+
+### initialize your variables 
+- initialize variables __upon creation__ 
+  - may choose to ignore this advice for a specific reason 
+  - ex. --> performance critical section of code that uses a lot of variables 
+  - choice is okay as long as its made _deliberately_ 
+- __best practice__ 
+  - initialize variables upon creation 
+
+### instantiation 
+- creation (allocation) and initialization 
+- an instantiated object is sometimes called an __instance__ 
+- most often applies to class type objects 
+
+#### initializing multiple variables 
+```c++
+int a, b; // create variables a & b, but do not initialize them (not preferred) 
+
+int a = 5, b = 6;       // copy initialization 
+int c ( 7 ), d ( 8 );   // direct initialization
+int e { 9 }, f { 10 };  // direct list initialization 
+int i { }, j { };       // value initialization 
+```
+- __common pitfalls when initializing:__ 
+```c++
+int a, b = 5;     // wrong: a is not initialized to 5
+int a = 5, b = 5; // correct: a & b are initialized to 5
+```
+- each variable __can only__ be initialized by its __own__ initializer 
+
+#### the __[[maybe_unused]]__ attribute (C++17) 
+- allow us to have unused variables without having compiler throw warnings/errors 
+```c++
+#include <iostream>
+
+int main() {
+    [[maybe_unused]] double pi { 3.14159 };    // Dont complain if pi is unused 
+    [[maybe_unused]] double gravity { 9.8 };   // Dont complain if gravity is unused  
+    [[maybe_unused]] double phi { 1.61803 };   // Dont complain if phy is unused 
+    
+    std::cout << pi << '\n';
+    std::cout << phi << '\n';
+    
+    // compiler wont throw a warning about gravity being unused 
+    
+    return 0;
+}
+```
+- should only be applied to selectively to variables that have a specific & legitimate reason for being unused 
+  - e.g, b/c need a list of named values, but which specific values are actually used in a given program may vary 
+  - otherwise, unused vars should be removed from the program 
+
 
 
 
