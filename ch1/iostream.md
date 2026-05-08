@@ -110,7 +110,32 @@ int main() {
     
     return 0;
 } 
+``` 
+- __recall:__ 
+  - single quotes used to represent single characters ('a' or '$')
+  - double quotes used to represent text (zero or more characters)
+- __best practice:__ 
+  - prefer __\n__ over __std::endl__ when outputting text to the console 
 
+
+### __std::cin__ 
+- character input 
+- reads input from keyboard 
+- typically use the __extraction__ operator __>>__ to put the input data in a variable (which can be used in subsequent statements)
+```
+#include <iostream> 
+
+int main() 
+{
+  std::cout << "Enter a number"; 
+  
+  int x {};
+  
+  std::cin >> x;
+  std::cout << "You entered " << x << '\n';
+  
+  return 0
+}
 ```
 
 
