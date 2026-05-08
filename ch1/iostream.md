@@ -67,8 +67,52 @@ int main() {
     std::cout << "My name is Chris" << std::endl;
     
     return 0;
-}
+} 
 ```
+- __best practice:__ 
+  - output a newline character whenever a line of output is complete 
+
+ ### __std::cout__ is buffered 
+- statements in our program request that output be sent to the console 
+  - however, that output is typically not sent to the console immediately 
+  - instead, the requested output "gets in line" & is stored in a region of memory set aside to collect such requests, 
+    called a __buffer__ 
+  - periodically, the buffer is __flushed__, meaning all the data collected in the buffer is transferred to its destination 
+    in this case, the console 
+  - this also means that if our program __crashes, aborts, or is paused__ before the buffer is flushed, any output still waiting 
+    in the buffer won't be displayed 
+- __unbuffered output__ 
+  - each individual output request is sent directly to the output device 
+- writing to a buffer is fast, transferring a batch of data to an output device is comparatively slow 
+  - buffering can __significantly__ increase performance by batching multiple output requests together to minimize 
+    the number of times output has to be sent to the output device 
+
+### __std::endl vs \n__ 
+- using __std::endl__ is often inefficient, as it does 2 jobs: 
+  - outputs a new line (moving cursor to the next line of the console) 
+  - flushes the buffer (which is slow) 
+- if we output multiple lines of text ending with __std::endl__, we'll get multiple flushes which is slow & probably unecessary 
+- when outputting text to console -> typically no need to explicitly flush the buffer 
+  - C++'s output system designed to __self-flush__ periodically 
+    - both simpler & more efficient to let it flush itself 
+- to output a newline w/o flushing the output buffer, we use __\n__ (inside either single or double quotes) 
+  - special symbol the compiler interprets as a __newline__ character 
+  - moves the cursor to next line of the console w/o causing a flush, so it'll perform better 
+  - also more concise to type & can be embedded into existing double-quoted text 
+```c++
+#include <iostream> 
+
+int main() {
+    int x { 5 };
+    std::cout << "x is equal to: " << x << '\n'; // single quoted (by itself) (conventional) 
+    std::cout << "Yep." << "\n";    // double quoted (by itself) (unconventional but ok) 
+    std::cout << "And that's all, folks!\n"; // between double quotes in existing text (conventional) 
+    
+    return 0;
+} 
+
+```
+
 
 
 
