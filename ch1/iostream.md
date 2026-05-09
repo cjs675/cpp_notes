@@ -153,8 +153,51 @@ int main()
   2. the extraction operator '__>>__' removes characters from the front of the input buffer & converts them into a value that is assigned (via copy-assignment) to the associated value 
     - this variable can then be used in subsequent statements 
 - each line of input data in the input buffer is terminated by a __'\n'__ character 
-[View example showing different extraction methods]()
+[View example showing different extraction methods](../code_tests/diff_extraction/main.cpp)
+- __key insight:__
+  - __std::cin__ is buffered b/c it allows us to separate the entering of input from the extract of input 
+    - we can enter input once and then perform multiple extraction requests on it
 
+#### the basic extraction process 
+- simplified view of how __insertion__ operator __>>__ works for input 
+  1. if __std::cin__ is not in a good state (e.g. prior extraction failed & __std::cin__ has not yet been cleared), no extraction is attempted 
+     and the extraction process aborts immediately 
+  2. leading whitespace chars (spaces, tabs, newlines at front of buffer) are discarded from input buffer. this will discard an unexpected newline char 
+     remaining from a prior line of input 
+  3. if the input buffer is now empty, operator __>>__ will wait for user to enter more data. any leading whitespace is discarded from the generated data 
+  4. operator __>>__ then extracts as many consecutive chars as it can, until it encounters either a newline character (representing EOL of input) or a character
+     that is not valid for the variable being extracted to
+- the result of the extraction process is as follows: 
+  - if the extraction __aborted__ in step 1, then no extraction attempt occurred. nothing else happens 
+  - if __any__ characters were extracted in step 4 above, extraction is a success. the extracted chars are converted into a value that is then copy-assigned to the variable 
+  - if __no__ characters could be extracted in step 4, extraction has __failed__. the object being extracted to is copy-assigned the value __0__ (as of C++11) and any future 
+    extractions wil immediately fail (until __std::cin__ is cleared) 
+- any non-extracted characters (including newlines) remain available for the next extraction attempt 
+- example: 
+```c++
+int x {};
+std::cin >> x;
+```
+- 3 diff input cases: 
+  - if user types in __5a__ and enters, __5a\n__ will be added to the buffer. __5__ will be extracted, converted to an integer, & assigned to the variable __x__ 
+    __a\n__ will be left in the input buffer for next extraction 
+  - if user types 'b' and enters, __b\n__ will be added to the buffer 
+    b/c __b__ is not a valid integer, no characters can be extracted, so this is an __extraction failure__. 
+    variable __x__ would be set to __0__ and future extractions will fail until the input stream is cleared 
+  - if __std::cin__ is not in a good state due to a prior failed extraction, nothing happens here. the value of variable __x__ is not altered 
+
+
+### __operator <<__ vs __operator >>__ 
+- __std::cin__ and __std::cout__ always go on the left-hand side of the operator 
+- __std::cout__ -> output a value
+  - uses __<<__ 
+  - shows direction data is moving 
+  - __std::cout << 4__ moves value __4__ to the console 
+- __std::cin__ -> get an input value 
+  - uses __>>__ 
+  - shows direction the data is moving 
+  - __std::cin >> x__ moves the value the user entered into variable __x__ 
+- 
 
 
 
