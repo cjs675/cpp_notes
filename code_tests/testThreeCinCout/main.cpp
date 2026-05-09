@@ -1,14 +1,15 @@
 #include <iostream> 
 
 int main()
-{
+{ 
+    std::cout << "Enter three numbers: ";
     int x {};
     int y {};
     int z {};
 
-    std::cout << "Enter three numbers: ";
-    std::cin >> x >> y >> z;
-    std::cout << "You entered " << x << "," << y << "," << " and " << z << '\n';
+    std::cin >> x >> y >> z; 
+
+    std::cout << "You entered " << x << ", " << y << ", and " << z << '\n';
 
     return 0;
 }
