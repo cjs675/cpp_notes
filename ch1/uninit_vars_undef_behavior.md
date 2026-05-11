@@ -26,4 +26,29 @@
   - works on some compilers but not others 
   - works until you change some other seemingly unrelated code 
 - __rule:__ 
-  - take care to avoid all situations that result in undefined behavior, such as using uninitialized behavior 
+  - take care to avoid all situations that result in undefined behavior, such as using uninitialized behavior  
+
+### implementation-defined behavior & unspecified behavior 
+- a specific compiler & the associated std lib it comes with are called an __implementation__ 
+- in some cases, the C++ lang std allows the implementation to determine how some aspect of the lang will behave, so that 
+  the compiler can choose a behavior that is __efficient__ for a given platform 
+  - __implementation-defined behavior__ 
+    - behavior that is defined by the implementation 
+    - must be documented & consistent for a given impl. 
+- ex. 
+```c++
+#include <iostream> 
+
+int main() {
+    std::cout << sizeof(int) << '\n'; // print how many bytes of memory an int value takes 
+    
+    return 0;
+}
+```
+
+
+### unspecified behavior 
+- behavior is left up to the implementation to define, but the implementation is not required to document the behavior 
+- generally want to __avoid__ implementation-defined & unspecified behavior, as it means our program may not work as expected if compiled 
+  on a different compiler (or even on the same compiler if we change project settings that affect how the impl. behaves)
+
