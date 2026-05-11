@@ -196,8 +196,10 @@ std::cin >> x;
 - __std::cin__ -> get an input value 
   - uses __>>__ 
   - shows direction the data is moving 
-  - __std::cin >> x__ moves the value the user entered into variable __x__ 
-- 
+  - __std::cin >> x__ moves the value the user entered into variable __x__
+[View example showing three uses of cin & cout](../code_tests/testThreeCinCout/main.cpp)
+
+  
 
 
 
