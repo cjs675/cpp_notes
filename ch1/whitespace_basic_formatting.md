@@ -133,8 +133,8 @@ std::cout << "Indeed\n";
   - __goal:__ ensure all devs on a project are programming in a consistent manner 
 - some commonly referenced C++ style guides include: 
   - [C++ core guidelines](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
-  - [Google]https://google.github.io/styleguide/cppguide.html()
-  - [LLVM]https://llvm.org/docs/CodingStandards.html()
+  - [Google](https://google.github.io/styleguide/cppguide.html)
+  - [LLVM](https://llvm.org/docs/CodingStandards.html)
   - [GCC/GNU](https://gcc.gnu.org/codingconventions.html)
 
 
