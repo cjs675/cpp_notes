@@ -29,7 +29,51 @@ returnType functionName() // function header - tells compiler about existence of
   - the _functionName_ is the __identifier__ of our user-defined function 
   - the parentheses after the identifier tell the compiler that a function is being defined 
 - to __call__ a function, we use the function's name followed by a set of parentheses (e.g. __functionName()__)
-- [See example illustrating a user-defined function being defined and called]()
+- [See example illustrating a user-defined function being defined and called](../examples/userDefinedFunction/main.cpp)
+
+### calling functions more than once 
+- functions can be called more than once 
+- See: [Example illustrating multiple function calls within main](../examples/multipleFunctionCalls/main.cpp)
+
+### functions can call functions that call other functions 
+- functions called by __main()__ can also call other functions(and those functions can call others too, etc..)
+- in the following program, __main()__ calls function __doA()__ which calls function __doB()__
+- [Example of a function invoking another](../examples/)
+
+### nested functions are not supported 
+- __nested function__ 
+  - a function whose definition is placed inside another function 
+  - unlike other langs, in C++ functions __cannot__ be nested 
+- the following program is illegal: 
+```c++
+#include <iostream> 
+
+int main() {
+    void foo() // Illegal: this function is nested inside function main() 
+    {
+        std::cout << "foo!\n";
+    }
+    foo();     // function call to foo() 
+    
+    return 0;
+}
+```
+- the proper way to write the above program: 
+```c++
+#include <iostream> 
+
+void foo()  // no longer inside of main 
+{
+    std::cout << "foo!\n";
+}
+
+int main()
+{
+    foo();
+    
+    return 0;
+}
+```
 
 
 
