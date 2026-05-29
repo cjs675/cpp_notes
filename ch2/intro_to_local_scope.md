@@ -85,7 +85,7 @@ int main()
     - this ensures local variables cannot be used _before_ the point of definition or _after_ they are destroyed 
 - local variables defined in one function are also __not__ in scope in other functions that are called 
 
-```c++
+```cpp
 #include <iostream>
 
 // x is not in scope anywhere in this function 
@@ -120,4 +120,76 @@ int main()
 - __recall:__ 
   - lifetime is a runtime property
   - scope is a compile-time property 
-- [See Example](./
+- [See Example](../examples/lifetimesAndScope/main.cpp)
+
+### functional separation 
+- considering the following program: (similar to program above) 
+
+```cpp
+#include <iostream>
+
+int add(int x, int y) // add's x & y are created & enter scope here 
+{
+    // add's x & y are visible/usable w/in this function only
+    return x + y;
+}  // add's x & y go out of scope & are destroyed here 
+
+int main() 
+{
+    int x { 5 };    // main's x is created, initialized & enters scope here 
+    int y { 6 };    // main's y is created, initialized & enters scope here 
+
+    // main's x & y are usable w/in this function only 
+    std::cout << add(x, y) << '\n'; // calls function add() with x = 5, y = 6 
+
+    return 0;
+
+}   // main's x & y go out of scope & are destroyed here    
+
+```
+- even though function __main__ and __add__ both have variables named x & y, they are distinct
+    - x & y in main have nothing to do with x & y in add 
+- when inside of function __main__, the names x & y refer to main's locally scoped variables x & y
+    - these variables can only be seen (and used) inside of __main__ 
+    - same with __add__ -> variables w/in can only be seen & used by add 
+- in short, neither __add__ nor __main__ know that the other function has variables w/ same names 
+    - b/c scopes dont overlap, its always clear to the compiler which x & y are being referred to at any time 
+
+#### key insight 
+ - names used for function params or variables declared in a function body are only visible 
+    w/in the function that declares them 
+    - this means local variables w/in a function can be named w/o regard for the names of variables 
+      in other functions 
+    - helps keep functions independent 
+
+### where to define local variables  
+- in modern cpp, __best practice:__ local variables inside function body should be defined as close to their first use as reasonable 
+```cpp
+#include <iostream> 
+
+int main() 
+{
+    std::cout << "Enter an integer";
+    int x { };      // x defined here 
+    std::cin >> x;  // and used here
+
+    std::cout << "Enter another integer";
+    int y { };      // y is defined here 
+    std::cin >> y;  // and used here 
+
+    int sum{ x + y }; // sum can be initialized with intended value 
+    std::cout << "The sum is: " << sum << '\n';
+
+    return 0;
+}
+```
+#### best practice
+- define local variables as close to their first use as reasonable 
+
+
+### when to use function params vs local variables 
+- function parameter should be used when the caller will pass in the initialization value as an argument 
+- a local variable should be used otherwise 
+- using a function parameter when a local variable should be used leads to code looking like this: 
+```cpp
+`
