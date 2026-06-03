@@ -81,8 +81,18 @@ int add(int x, int y) // even though the body of add() isn't defined until here
 #### best practice 
 - when addressing compilation errors or warnings in our programs, resolve the __first__ issue listed & 
   then compile again 
-- keep parameter names in function declarations
+- keep parameter names in function declarations 
 
+
+### forgetting the function body 
+- what occurs if we forward declare a function but don't define it? 
+    - __answer:__ it depends 
+        - if a forward declaration is made but the function is never called, the program will compile & run fine 
+        - if a forward declaration is made and the function is called, but the program never defines the function, 
+          the program will compile okay, but the __linker__ will complain it can't resolve the function call 
+### other types of forward declarations
+- FDs are most often used with functions, however they can also be used with other identifiers in C++, such as 
+  variables & types 
 
 ### declarations vs. definitions 
 
@@ -108,7 +118,20 @@ int x;                  // instantiates variable x
     - therefore, __int x;__ is both a definition & a declaration 
 
 - conversely, __not all declarations are definitions__ 
-- __pure declarations:__ declarations that aren't definitions 
+- __pure declarations:__ declarations that aren't definitions  
+    - ex. forward declarations for functions, variables, types 
+- when the compiler encounters an identifier, it will check to ensure use of that identifier is valid 
+    - (e.g) that the identifier is in scope, that it is used in a syntactically valid manner, etc. 
+
+- in most cases, a declaration is sufficient to allow the compiler to ensure an identifier is being used properly 
+- (ex.) 
+    - when the compiler encounters function call __add(5, 6)__ if it has already seen the declaration for __add(int, int)__ 
+      then it can validate that __add__ is actually a function that takes two __int__ params 
+    - it doesn't need to have actually seen the definition for function __add__ (which may exist in another file) 
+    - cases where compiler __must__ be able to see a full definition in order to use an identifier: 
+        - templates 
+        - type defs 
+- see: [summary table for forward declarations](/pics/summary_of_forward_declarations.jpg)  
 
 
 
