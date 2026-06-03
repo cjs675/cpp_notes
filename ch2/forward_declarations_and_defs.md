@@ -59,14 +59,56 @@ int add(int x, int y) // even though the body of add() isn't defined until here
 {
     return x + y;
 }
-```
+``` 
+- __worth noting__: function declarations don't need to specify names of the params 
+    - since they're not considered to be part of the function declaration
+    - we could have also written: 
+ ```cpp
+ int add(int, int); // valid function declaration  
+ ```
+- however, it is preferred to name out params (using the same names as the actual function) 
+    - this allows us to understand what the function params are just by looking at the declaration
 
+
+### why forward declarations? 
+- most often used to tell compiler about the existence of some function that has been defined in a different code file 
+    - reordering isn't possible in this scenario b/c the caller & callee are in completely __different__ files 
+- can be used to define functions in an order agnostic manner 
+    - allows us to define functions in whatever order maximizes organization or reader understanding 
+- give us a way to resolve circular deps (times when we have two functions that call each other) 
 
 
 #### best practice 
 - when addressing compilation errors or warnings in our programs, resolve the __first__ issue listed & 
   then compile again 
+- keep parameter names in function declarations
 
+
+### declarations vs. definitions 
+
+- __declaration__: tells the _compiler_ about the existence of an identifier and its associated type info
+```cpp
+int add(int x, int y); // tells the compiler about a function named "add" that takes two int params 
+                       // and returns and int. no body 
+int x;                 // tells the compiler about an integer variables named x 
+```
+- __definition:__ a declaration that actually implements (for functions and types) or instantiates (for variables) the identifier 
+```cpp
+// b/c this function has a body, it is an implementation of function add() 
+int add(int x, int y) 
+{
+    int z { x + y };    // instantiates variable z
+
+    return z;
+}
+
+int x;                  // instantiates variable x
+```
+- in C++, all definitions are declarations 
+    - therefore, __int x;__ is both a definition & a declaration 
+
+- conversely, __not all declarations are definitions__ 
+- __pure declarations:__ declarations that aren't definitions 
 
 
 
