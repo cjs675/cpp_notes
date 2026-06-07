@@ -131,7 +131,33 @@ int x;                  // instantiates variable x
     - cases where compiler __must__ be able to see a full definition in order to use an identifier: 
         - templates 
         - type defs 
-- see: [summary table for forward declarations](/pics/summary_of_forward_declarations.jpg)  
+- see: [summary table for forward declarations](pics/summary_of_forward_declarations.jpg)  
+
+
+### the one definition rule (ODR) 
+- well known rule in C++ with 3 parts: 
+    1. Within a __file__, each function, variable, type or template in a given scope can only have __one__ definition. 
+       Definitions occuring in different scopes (e.g. local vars defined inside different functions, or functions 
+       defined inside different namespaces) do not violate this rule 
+    2. Within a __program__, each function or variable in a given scope can only have __one__ definition. This rule exists
+       b/c programs can have more than one file. Functions & vars not visible to the linker are exclused from this rule 
+    3. Types, templates, inline functions & inline vars __are__ allowed to have duplicate defs in __different__ files, so 
+       long as each definition is identical
+- violating part 1 of the ODR will cause the compiler to issue a __redefinition error__ 
+- violating part 2 of the ODR will cause the linker to issue a redefinition error 
+- violating part 3 of the ODR will cause undefined behavior  
+
+- functions that share an identifier but have different sets of params are also considered to be __distinct__ functions, so such 
+  definitions do not violate the ODR 
+
+- __function prototype__ 
+    - a declaration statement that includes: 
+        - a function's name
+        - return type 
+        - parameter types 
+        - optional parameter names 
+    - does not include the function body 
+    - tells the compiler about the existence of a function before it is defined 
 
 
 
