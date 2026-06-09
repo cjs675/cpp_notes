@@ -95,5 +95,115 @@ void goo();     // okay: a function forward declaration
 
 
 ### the std namespace 
+- functionality in the standard library lies within a namespaced named __std__ (short for standard) 
+    - for example: 
+        - __std::cout__ -> __std__ is the name of the namespace the identifier __cout__ is part of 
+        - because __cout__ is defined in the __std__ namespace, the name __cout__ won't conflict w/ any objects 
+          or functions named __cout__ that are created outside of the __std__ namespace (such as in global namespace) 
+
+- __key insight:__ 
+    - when using an identifier that is defined inside a non-global namespace (e.g. the std namespace), we need to tell 
+      the compiler the identifier lives inside the namespace 
+
+
+### explicit namespace qualifier std:: 
+- the most straightforward way to tell the compiler we wish to use __cout__ from __std__ namespace is by explicitly using the 
+  __std::__ prefix 
+
+```cpp 
+#include <iostream> 
+
+int main() 
+{
+    std::cout << "Hello world"; // when we say cout, we refer to cout defined in the std namespace  
+    return 0;
+} 
+```
+- the __::__ symbol is an operator called the __scope resolution operator__ 
+    - the identifier to the left of the __::__ symbol id's the namespace that the name to the right of the __::__ 
+      symbol is contained within 
+    - if no identifier to the left of the __::__ is provided, the global namespace is assumed 
+    - when we say __std::cout__ we're saying "the __cout__ that is declared in namespace __std__" 
+        - this is the safest way to use cout, b/c there's no ambiguity about which __cout__ we're referencing 
+- when an identifier includes a namespace prefix, the identifier is called a __qualified name__ 
+
+
+### using namespace std (and why to avoid it) 
+- another way to access identifiers inside a namespace is to use a using-directive statement 
+- a __using directive__ allows us to access names in a namespace w/o using a namespace prefix as such:  
+
+```cpp
+
+#include <iostream> // imports the declaration of std::cout into the global scope 
+
+using namespace std; // makes std::cout accessible as "cout" 
+
+int cout() // defines our own "cout" function in global namespace 
+{
+    return 5;
+}
+
+int main() 
+{
+    cout << "Hello, world"; // compile error - which cout do we want here? 
+                            // the one in std namespace or the one we defined above? 
+}
+```
+- the above program doesn't compile b/c the compiler now can't tell whether we want the __cout__ function 
+  that we defined, or __std::cout__ 
+- when using a using-directive in this manner, _any_ identifier we define may conflict with _any_ identically 
+  named identifier in the __std__ namespace 
+    - even worse, while an identifier name may not conflict today, it may conflict with new identifiers added 
+      to the std namespace in future language revisions 
+    - this was the __main purpose__ of moving all of the identifiers in the std lib into the __std__ namespace 
+      in the first place 
+
+- __warning:__ 
+    - avoid using-directives (such as __using namespace std;__) at the top of your program or in header files 
+    - they violate the reason why namespaces were added in the first place 
+
+### curly braces and indented code 
+- in C++, curly braces are often used to delineate a scope and region that is nested w/in another scope region 
+    - also used for some non-scope related purposes (list initialization) 
+- for ex: a function defined inside the global scope region uses curly braces to separate the scope region of 
+  the function from the global scope 
+- in some cases, identifiers defined outside the curly braces may still be part of the scope defined by the curly
+  braces rather than the surrounding scope -- __function parameters__ are a good example of this 
+    - for example:  
+
+```cpp
+
+#include <iostream> // imports the declaration of std::cout into the global scope 
+
+void foo(int x) // foo is defined in global scope, x is defined w/in scope of foo
+{   // braces used to delineate nested scope region for function foo() 
+    std::cout << x << '\n';
+}   // x goes out of scope here 
+
+int main() 
+{ // braces used to delineate nested scope region for function main() 
+    foo(5);
+
+    int x { 6 }; // x is defined w/in scope of main() 
+    std::cout << x << '\n';
+
+    return 0;
+}   // x goes out of scope here 
+// foo & main (and std::cout) go out of scope here (EOF) 
+```
+- the code that exists inside a nested scope region is conventionally indented one level, both for readability 
+  and to help indicate that it exists inside a separate scope region 
+- the __#include__ and function defs for __foo()__ and __main()__ exist in the global scope region, so they're 
+  not indented 
+  - the statements inside each function exist inside the nested scope region of the function, so they're indented 
+    only one level 
+
+
+
+
+
+
+
+
 
 
