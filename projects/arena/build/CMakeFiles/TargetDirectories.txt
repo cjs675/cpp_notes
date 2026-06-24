@@ -1,0 +1,3 @@
+/Users/chrissilva/environment/school/cop_3003/cpp_notes/arena/build/CMakeFiles/main.dir
+/Users/chrissilva/environment/school/cop_3003/cpp_notes/arena/build/CMakeFiles/edit_cache.dir
+/Users/chrissilva/environment/school/cop_3003/cpp_notes/arena/build/CMakeFiles/rebuild_cache.dir
