@@ -1,0 +1,15 @@
+### priority table for operators 
+
+
++-
+
+*/%
+
++-
+
+< <= = > >= 
+
+=+ =- *= /= %=
+
+
+
