@@ -1,9 +1,0 @@
-{
-  "name": "my-project",
-  "version": "1.0.0",
-  "dependencies": [
-    "fmt",
-    "nlohmann-json",
-    "boost-bloom"
-  ]
-}

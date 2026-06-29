@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/Users/chrissilva/environment/school/cop_3003/cpp_notes/arena/build",
-  "command": "/usr/bin/c++  -isystem /Users/chrissilva/environment/school/cop_3003/cpp_notes/arena/build/vcpkg_installed/arm64-osx/include -std=gnu++17 -arch arm64 -o CMakeFiles/main.dir/src/main.cpp.o -c /Users/chrissilva/environment/school/cop_3003/cpp_notes/arena/src/main.cpp",
-  "file": "/Users/chrissilva/environment/school/cop_3003/cpp_notes/arena/src/main.cpp",
-  "output": "CMakeFiles/main.dir/src/main.cpp.o"
-}
-]

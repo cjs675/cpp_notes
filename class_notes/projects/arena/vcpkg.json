@@ -1,8 +1,0 @@
-{
-    "name": "arena-project",
-    "version": "1.0.0",
-    "dependencies": [
-        "boost-pool",
-        "fmt"
-    ]
-}
