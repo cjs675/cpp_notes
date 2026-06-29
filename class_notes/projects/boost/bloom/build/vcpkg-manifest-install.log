@@ -1,0 +1,49 @@
+Detecting compiler hash for triplet arm64-osx...
+Compiler found: /usr/bin/c++
+The following packages are already installed:
+  * boost-assert:arm64-osx@1.91.0
+    boost-bloom:arm64-osx@1.91.0
+  * boost-cmake:arm64-osx@1.91.0
+  * boost-config:arm64-osx@1.91.0
+  * boost-container-hash:arm64-osx@1.91.0
+  * boost-core:arm64-osx@1.91.0
+  * boost-describe:arm64-osx@1.91.0
+  * boost-headers:arm64-osx@1.91.0
+  * boost-mp11:arm64-osx@1.91.0
+  * boost-throw-exception:arm64-osx@1.91.0
+  * boost-type-traits:arm64-osx@1.91.0
+  * boost-uninstall:arm64-osx@1.91.0
+    fmt:arm64-osx@12.1.0
+    nlohmann-json:arm64-osx@3.12.0#2
+  * vcpkg-boost:arm64-osx@2025-03-29
+  * vcpkg-cmake:arm64-osx@2024-04-23
+  * vcpkg-cmake-config:arm64-osx@2024-05-23
+boost-bloom provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(boost_bloom CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE Boost::bloom)
+
+The package fmt provides CMake targets:
+
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt)
+
+    # Or use the header-only version
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt-header-only)
+
+The package nlohmann-json provides CMake targets:
+
+    find_package(nlohmann_json CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE nlohmann_json::nlohmann_json)
+
+The package nlohmann-json can be configured to not provide implicit conversions via a custom triplet file:
+
+    set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)
+
+For more information, see the docs here:
+    
+    https://json.nlohmann.me/api/macros/json_use_implicit_conversions/
+
+All requested installations completed successfully in: 112 us

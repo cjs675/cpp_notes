@@ -1,0 +1,106 @@
+Detecting compiler hash for triplet arm64-osx...
+Compiler found: /usr/bin/c++
+The following packages will be built and installed:
+  * boost-assert:arm64-osx@1.91.0
+    boost-bloom:arm64-osx@1.91.0
+  * boost-cmake:arm64-osx@1.91.0
+  * boost-config:arm64-osx@1.91.0
+  * boost-container-hash:arm64-osx@1.91.0
+  * boost-core:arm64-osx@1.91.0
+  * boost-describe:arm64-osx@1.91.0
+  * boost-headers:arm64-osx@1.91.0
+  * boost-mp11:arm64-osx@1.91.0
+  * boost-throw-exception:arm64-osx@1.91.0
+  * boost-type-traits:arm64-osx@1.91.0
+  * boost-uninstall:arm64-osx@1.91.0
+    fmt:arm64-osx@12.1.0
+    nlohmann-json:arm64-osx@3.12.0#2
+  * vcpkg-boost:arm64-osx@2025-03-29
+  * vcpkg-cmake:arm64-osx@2024-04-23
+  * vcpkg-cmake-config:arm64-osx@2024-05-23
+Additional packages (*) will be modified to complete this operation.
+Restored 17 package(s) from /Users/chrissilva/.cache/vcpkg/archives in 95.4 ms. Use --debug to see more details.
+Installing 1/17 vcpkg-cmake-config:arm64-osx@2024-05-23...
+vcpkg-cmake-config:arm64-osx@2024-05-23 package ABI: f40cc57e47a44fd3b0a92113acead212ffb7c4485208c59bc2862b42e840f294
+Elapsed time to handle vcpkg-cmake-config:arm64-osx: 1.59 ms
+Installing 2/17 vcpkg-cmake:arm64-osx@2024-04-23...
+vcpkg-cmake:arm64-osx@2024-04-23 package ABI: 28547a1fc1e91f3421996d67eff2277aa14895db5275e17ed84a91722b98213f
+Elapsed time to handle vcpkg-cmake:arm64-osx: 1.42 ms
+Installing 3/17 vcpkg-boost:arm64-osx@2025-03-29...
+vcpkg-boost:arm64-osx@2025-03-29 package ABI: dbd2569f210772ca1f561a5dca5e369e122ad348817dc1e683f729386a20cf1d
+Elapsed time to handle vcpkg-boost:arm64-osx: 1.29 ms
+Installing 4/17 boost-uninstall:arm64-osx@1.91.0...
+boost-uninstall:arm64-osx@1.91.0 package ABI: 96e2a6918c0346bf7f61995e28e456637e22543365bd0533074a9185f8cfab62
+Elapsed time to handle boost-uninstall:arm64-osx: 1.13 ms
+Installing 5/17 boost-cmake:arm64-osx@1.91.0...
+boost-cmake:arm64-osx@1.91.0 package ABI: fdf642dc1c0a3563dd04c270a2c95fd4b7ce6ff8cbc1da94a028797f123f0170
+Elapsed time to handle boost-cmake:arm64-osx: 2.37 ms
+Installing 6/17 boost-headers:arm64-osx@1.91.0...
+boost-headers:arm64-osx@1.91.0 package ABI: e7b91086bdb8771bdc884b7e1366ca5fb3edf648583996c796916ce3d8bad84f
+Elapsed time to handle boost-headers:arm64-osx: 2 ms
+Installing 7/17 boost-config:arm64-osx@1.91.0...
+boost-config:arm64-osx@1.91.0 package ABI: 87bc9f152905918000e2d53e9bff13e3c9ab56adea6ae3e99b810042841c0674
+Elapsed time to handle boost-config:arm64-osx: 39 ms
+Installing 8/17 boost-type-traits:arm64-osx@1.91.0...
+boost-type-traits:arm64-osx@1.91.0 package ABI: ac640107fdedbc0f8bcd29865c80af4591f1523a1dd2445cd78d2caec0c39ab7
+Elapsed time to handle boost-type-traits:arm64-osx: 32.2 ms
+Installing 9/17 boost-assert:arm64-osx@1.91.0...
+boost-assert:arm64-osx@1.91.0 package ABI: 998c4f2de02c88ef10a42b145957775b47a06f32573e2947c7739eaeaf33c076
+Elapsed time to handle boost-assert:arm64-osx: 2.81 ms
+Installing 10/17 boost-throw-exception:arm64-osx@1.91.0...
+boost-throw-exception:arm64-osx@1.91.0 package ABI: e488f06c65ee9e3b9634f97cd7b392bd2ac1beca0097a5d0a757d4fd98f92b1c
+Elapsed time to handle boost-throw-exception:arm64-osx: 2.51 ms
+Installing 11/17 boost-core:arm64-osx@1.91.0...
+boost-core:arm64-osx@1.91.0 package ABI: a53a26c6d0d2fd1e3bcf79ce91163975a3b7f4706d257cfdc747fd9a0b1ffb61
+Elapsed time to handle boost-core:arm64-osx: 16 ms
+Installing 12/17 boost-mp11:arm64-osx@1.91.0...
+boost-mp11:arm64-osx@1.91.0 package ABI: 422e3e495e7ab377ec4bbff59be47f4393a8172d826cc4a1c91f9e2d42d90953
+Elapsed time to handle boost-mp11:arm64-osx: 7.4 ms
+Installing 13/17 boost-describe:arm64-osx@1.91.0...
+boost-describe:arm64-osx@1.91.0 package ABI: 480bb8fb8741862662e127b5c949d6d253a8b3b7d7651c1dc73bcb72eb086af2
+Elapsed time to handle boost-describe:arm64-osx: 6.09 ms
+Installing 14/17 boost-container-hash:arm64-osx@1.91.0...
+boost-container-hash:arm64-osx@1.91.0 package ABI: f78f3dc42f31c3ec7deaf92d1437c39fb8315d8ed6f360e41d66dddaed536334
+Elapsed time to handle boost-container-hash:arm64-osx: 4.75 ms
+Installing 15/17 boost-bloom:arm64-osx@1.91.0...
+boost-bloom:arm64-osx@1.91.0 package ABI: 482c3cf463a202c58af4a609196064c457621d8712446a5fd7f6657b9d95df5d
+Elapsed time to handle boost-bloom:arm64-osx: 5.28 ms
+Installing 16/17 fmt:arm64-osx@12.1.0...
+fmt:arm64-osx@12.1.0 package ABI: aae113b332e4808d79532d2c67033d98daeb670dd54fb7f5e6a9608bfed7107e
+Elapsed time to handle fmt:arm64-osx: 4.49 ms
+Installing 17/17 nlohmann-json:arm64-osx@3.12.0#2...
+nlohmann-json:arm64-osx@3.12.0#2 package ABI: 16ba46461c28b82c21b701b629385594fae776d49ad630c65b5a0f0e988f8bc7
+Elapsed time to handle nlohmann-json:arm64-osx: 8.07 ms
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Packages installed in this vcpkg installation declare the following licenses:
+BSL-1.0
+MIT
+boost-bloom provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(boost_bloom CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE Boost::bloom)
+
+The package fmt provides CMake targets:
+
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt)
+
+    # Or use the header-only version
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt-header-only)
+
+The package nlohmann-json provides CMake targets:
+
+    find_package(nlohmann_json CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE nlohmann_json::nlohmann_json)
+
+The package nlohmann-json can be configured to not provide implicit conversions via a custom triplet file:
+
+    set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)
+
+For more information, see the docs here:
+    
+    https://json.nlohmann.me/api/macros/json_use_implicit_conversions/
+
+All requested installations completed successfully in: 141 ms

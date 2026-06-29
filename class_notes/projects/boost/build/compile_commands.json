@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/build",
+  "command": "/usr/bin/c++  -I/Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/include -isystem /Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/build/vcpkg_installed/arm64-osx/include -std=gnu++17 -arch arm64 -o CMakeFiles/main.dir/src/main.cpp.o -c /Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/src/main.cpp",
+  "file": "/Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/build",
+  "command": "/usr/bin/c++  -I/Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/include -isystem /Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/build/vcpkg_installed/arm64-osx/include -std=gnu++17 -arch arm64 -o CMakeFiles/main.dir/src/blacklist.cpp.o -c /Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/src/blacklist.cpp",
+  "file": "/Users/chrissilva/environment/school/cop_3003/cpp_notes/boost/src/blacklist.cpp",
+  "output": "CMakeFiles/main.dir/src/blacklist.cpp.o"
+}
+]

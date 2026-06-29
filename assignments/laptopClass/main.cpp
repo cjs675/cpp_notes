@@ -7,11 +7,10 @@ class Laptop {
     private: 
         string Brand; 
         string Processor;
-        float Price; 
+        double Price; 
         bool studentStatus;  
 
 
-    // setters 
     public: 
         // string setters set to pass a reference to a string set as a constant 
         void setBrand(const string& s) {
@@ -30,7 +29,7 @@ class Laptop {
             studentStatus = s;
         } 
 
-    // getters 
+       // getters 
        string getBrand() {
            return Brand;
        }
@@ -48,10 +47,19 @@ class Laptop {
        }
         
 
-
-
        void inputSpecs() {
-           cout << "Enter a brand "
+           cout << "Enter a brand: ";
+           // getline used instead of cin >> so spaces can be captured 
+           getline(cin, Brand);
+
+           cout << "Enter processor: ";
+           getline(cin, Processor);
+
+           cout << "Enter price: ";
+           cin >> Price;
+
+           cout << "Are you a student? (1 = Yes, 0 = No): ";
+           cin >> studentStatus;
        }
 
         // custom method to print object's detials 
@@ -73,11 +81,18 @@ class Laptop {
                 return Price * 0.80;
             } 
             // return regular base price if not a student
-            return Price;
+            return Price; 
         }
+
+
+
+        // add one more method 
+        // change price based on ram (if ram == 8gb price == cheap, if ram == 16gb price == medium, elif price >= 32 == expensive) 
+
+
+        // validate user input 
+
 };
-
-
 
 
 int main() {
@@ -98,11 +113,17 @@ int main() {
     laptopThree.setBrand("Framework");
     laptopThree.setProcessor("Intel Core Ultra 3");
     laptopThree.setPrice(1599.99);
-    laptopThree.setStudentStatus(true);
+    laptopThree.setStudentStatus(true); 
+
+    Laptop laptopFour;
+    cout << "--- Enter details for a custom laptop ---" << endl;
+    laptopFour.inputSpecs();
+
 
     laptopOne.displaySpecs(); 
     laptopTwo.displaySpecs(); 
-    laptopThree.displaySpecs(); 
+    laptopThree.displaySpecs();  
+    laptopFour.displaySpecs();
 
     return 0;
 }
