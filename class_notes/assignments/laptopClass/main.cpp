@@ -123,7 +123,7 @@ int main() {
     laptopOne.displaySpecs(); 
     laptopTwo.displaySpecs(); 
     laptopThree.displaySpecs();  
-    laptopFour.displaySpecs();
+    laptopFour.displaySpecs(); 
 
     return 0;
 }

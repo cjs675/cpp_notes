@@ -1,8 +1,11 @@
 .idea/ 
 
 # ignore vcpkg deps 
-vcpkg_installed/
-*.lock
+**/vcpkg_installed/
+build/
+*.lock 
+*.json
+
 
 # ignore compiled bins/executables 
 main

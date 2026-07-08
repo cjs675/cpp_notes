@@ -1,1 +1,9 @@
-.idea/
+.idea/ 
+
+# ignore vcpkg deps 
+vcpkg_installed/
+*.lock
+
+# ignore compiled bins/executables 
+main
+*.cmake
