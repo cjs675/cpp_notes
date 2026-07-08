@@ -1,12 +1,41 @@
+# ignore clion output 
 .idea/ 
 
 # ignore vcpkg deps 
 **/vcpkg_installed/
-build/
 *.lock 
-*.json
+*.json 
+!vcpkg.json
 
+# ignore macOS system files 
+.DS_Store 
+.AppleDouble 
+.LSOverride 
+._*
+.Spotlight-V100
+.Trashes
+*.dSYM
+
+# C++ Object & Dependency Files 
+*.o 
+*.d
+
+
+# libraries 
+*.a
+*.dylib
+*.so
+
+# generic exe's
+*.out 
+*.app
+
+# build dirs 
+build/
+bin/ 
+obj/
 
 # ignore compiled bins/executables 
-main
-*.cmake
+*.cmake 
+main 
+.main
