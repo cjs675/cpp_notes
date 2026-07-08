@@ -38,7 +38,7 @@ public:
 int main() {
     EvenOdd calculation;
 
-    cout << "Enter 5 integers: " << endl;
+    cout << "\nEnter 5 integers: \n" << endl;
     for (int i = 0; i < 5; i++) {
         cin >> calculation.arr[i];
     }
@@ -47,8 +47,8 @@ int main() {
     calculation.calcEven();
     calculation.calcOdd(); 
 
-    cout << "Even elements" << calculation.e_count << "\n";
-    cout << "Odd elements" << calculation.o_count << "\n";
+    cout << "\nEven elements: " << calculation.e_count << "\n";
+    cout << "\nOdd elements: " << calculation.o_count << "\n";
     
     return 0;
 }
