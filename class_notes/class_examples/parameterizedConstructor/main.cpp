@@ -25,11 +25,7 @@ public:
 };
 
 
-int main() { 
-    // To do: 
-    // figure out how to store classes in arrays 
-    // ex. creating 800th employee
-    // measure performance 
+int main() {
     Employee e1 = Employee(201, "Joel", 99000);
     Employee e2 = Employee(202, "Chris", 215000); 
 
