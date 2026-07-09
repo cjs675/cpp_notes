@@ -10,7 +10,7 @@ private:
 
 public: 
     void getData() { 
-        cout << "Enter 10 class scores: \n" << endl;
+        cout << "\nEnter 10 class scores: \n" << endl;
         for (int i = 0; i < 10; i++) {
             cin >> scores[i];
         }
@@ -44,8 +44,23 @@ public:
         cout << endl;
     }
 
-    void sortDescending() {
-        int temp;
+    void sortDescending() {  
+        for (int i = 0; i < 9; i++) {  
+            for (int j = 0; j < 9 - i; j++) {
+                if (scores[j] < scores[j + 1]) {
+                    // swap values if score at index i > score at following index, [i + 1] 
+                    // temp = temporary var holding value to be swapped "out" of original place 
+                    int temp = scores[j + 1];
+                    scores[j + 1] = scores[j];
+                    scores[j] = temp;
+                }
+            }
+        } 
+        cout << "\nArray Sorted in Descending Order: \n"; 
+        for (int i = 0; i < 10; i++) {
+            cout <<scores[i] << " ";
+        } 
+        cout << endl;
     }
 
     void locateHigh() {
@@ -63,6 +78,7 @@ int main() {
     
     scoreList1.getData();
     scoreList1.displayOriginal(); 
-    scoreList1.sortAscending();
+    scoreList1.sortAscending(); 
+    scoreList1.sortDescending();
 
 }
