@@ -17,7 +17,6 @@ public:
         
     }
     
-    // method to display original array
     void displayOriginal() { 
         cout << "\nOriginal Array of Scores: \n\n";  
         // for - each loop which traverses entire given array 
@@ -27,7 +26,10 @@ public:
         cout << endl;
     }
     
-    // Method to sort array in ascending order 
+    /*
+    * Method to sort array in ascending order  
+    * using bubble-sort algorithm 
+    */
     void sortAscending() {  
         // traverse array from index 0 to end (n-1) 
         // 10 elements (10-1 = 9)
@@ -51,16 +53,20 @@ public:
     } 
 
     
-    /*  Since the scores array is already sorted (low -> high)
-    *   we output the value at the very end of the sorted array, 
-    *   which is already the highest value - outputting the 
-    *   element at the end (n - 1) = 9th place 
+    /*
+    *  Since the scores array is already sorted (low -> high)
+    *  we output the value at the very end of the sorted array, 
+    *  which is already the highest value - outputting the 
+    *  element at the end (n - 1) = 9th place 
     */
     void locateHigh() {
         cout << "\nHighest Value: " << scores[size - 1] << endl;
     }
 
-    // method to sort array in descending order 
+    /*
+    * Method to sort scores array in descending order 
+    * using bubble-sort algorithm 
+    */
     void sortDescending() {  
         // traverse array from index 0 to end (n - 1) 
         for (int i = 0; i < 9; i++) {  
@@ -68,7 +74,7 @@ public:
                 // check if value on left = smaller than value on right  
                 // if value on left = smaller, swap positions with value on right 
                 if (scores[j] < scores[j + 1]) {
-                    // swap values if score at index i > score at following index, [i + 1] 
+                    // swap values if score at index i < score at following index, [i + 1] 
                     // temp = temporary var holding value to be swapped "out" of original place 
                     int temp = scores[j + 1];
                     scores[j + 1] = scores[j];
