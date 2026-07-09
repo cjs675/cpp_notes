@@ -18,8 +18,12 @@ public:
     }
     
     void displayOriginal() { 
-        cout << "\nOriginal Array of Scores: \n\n";  
-        // for - each loop which traverses entire given array 
+        cout << "\nOriginal Array of Scores: \n\n";   
+        /* 
+        * for-each loop, traversing entire array
+        * to output each element inside array 
+        * consecutively 
+        */
         for (int score : scores) { 
             cout << score << " ";  
         } 
@@ -35,7 +39,7 @@ public:
         // 10 elements (10-1 = 9)
         for (int i = 0; i < 9; i++) {  
             for (int j = 0; j < 9 - i; j++) {
-                // check if value on left = larger than value on right 
+                // check if value on left >  value on right 
                 if (scores[j] > scores[j + 1]) {
                     // swap values if score at index i > score at following index, [i + 1] 
                     // temp = temporary var holding value to be swapped "out" of original place 
@@ -71,7 +75,7 @@ public:
         // traverse array from index 0 to end (n - 1) 
         for (int i = 0; i < 9; i++) {  
             for (int j = 0; j < 9 - i; j++) {
-                // check if value on left = smaller than value on right  
+                // check if value on left <  value on right  
                 // if value on left = smaller, swap positions with value on right 
                 if (scores[j] < scores[j + 1]) {
                     // swap values if score at index i < score at following index, [i + 1] 
