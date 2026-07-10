@@ -1,0 +1,25 @@
+#include <iostream> 
+
+using namespace std;
+
+int main() {
+    vector<int> prime_numbers{2, 3, 5, 7};
+
+    // initial vector
+    cout << "Initial Vector: ";
+    for (int i : prime_numbers){
+        cout << i << " ";
+    }
+
+    // remove last element 
+    prime_numbers.pop_back();
+
+    // final vector
+    cout << "\nUpdated Vector: ";
+    for (int i : prime_numbers) {
+        cout << i << " ";
+    } 
+    cout << endl; 
+
+    return 0;
+}
