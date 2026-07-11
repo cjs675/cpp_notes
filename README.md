@@ -1,4 +1,4 @@
-# cpp_notes
+# cop-3003
 directory containing my notes on cpp 
 
 __sources:__ 
