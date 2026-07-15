@@ -9,21 +9,26 @@ private:
     string author;
     int copiesAvailable;
 
-public:
+public: 
+    // parameter-initialized constructor 
     Book() : title(""),  author(""), copiesAvailable(0) {}
     Book(const string& bookTitle, const string& bookAuthor, const int numAvailable)
         : title(bookTitle), author(bookAuthor), copiesAvailable(numAvailable) {} 
     
+    // method to display book info
     void displayBook() const {
         cout << "\n" << title << " by " << author << " -  Copies: "<< copiesAvailable << "\n";
     } 
-
+    
+    // method to return number of copies available of given book as an integer type 
     int getCopiesAvailable() const {
         return copiesAvailable; 
     }
 };
 
 int main() {
+
+    // array of 10 book objects created 
     Book books[10];
 
     books[0] = Book("Designing Data-Intensive Applications", "Martin Kleppman", 10);
@@ -38,7 +43,11 @@ int main() {
     books[9] = Book("Rust Atomics & Locks", "Mara Bo", 0);
 
     cout << "\n-------Books Available in Library: --------\n" << endl;
-
+   
+    /* 
+    * For loop to iterate through array of books created 
+    * and return those with more than 0 copies available 
+    */
     for (int i = 0; i < 10; i++) {
         if (books[i].getCopiesAvailable() > 0) {
             books[i].displayBook();
