@@ -14,17 +14,12 @@ public:
     // parameterized list constructor 
     Staff(int staffNum, const string& staffName) 
     : id(staffNum), name(staffName) {}
-
-    Staff(int staffNum, const string& staffName) {
-        id = staffNum;
-        name = staffName;
-    }
-    
     
     void displayDetails() const {
-        cout << "Worker ID: " << id << "\nName: " << name;
+        cout << " | Name: " << name << " | ID: " << id; 
     }
 };
+
 
 class Doctor : public Staff {
 
@@ -34,17 +29,18 @@ protected:
 
 public: 
     Doctor(int id, const string& staffName, const string& spec, 
-            int xp) : Staff(id, staffName), specialization(spec), yearsOfExp(exp) {}
+            int xp) : Staff(id, staffName), specialization(spec), yearsOfExp(xp) {}
     
-    void displayDetails() {
-        cout << " [Doctor] ";
+    void displayDetails() { 
+        cout << "\nDoctor Details: \n";
         // call base class printer for shared attributes 
         Staff::displayDetails(); 
         
-        cout << "| Specialization: " << specialization
-             << "| Experience: " << yearsOfExp << " years" << endl;
+        cout << " | Specialization: " << specialization
+             << " | Experience: " << yearsOfExp << " years" << endl;
     }
 }; 
+
 
 class Nurse : public Staff {
 
@@ -54,13 +50,12 @@ protected:
 
 public: 
     // constructor calls base staff constructor first 
-    Nurse(const string& id, const string& staffName, 
+    Nurse(int id, const string& staffName, 
           const string& dept, const string& shift) : 
           Staff(id, staffName), department(dept), shiftTiming(shift) {} 
 
-    void printDetails() const override {
-        cout << " [Nurse] ";
-        printDetails();
+    void displayDetails() const  { 
+        cout << "\nNurse Details: \n";
         Staff::displayDetails();
         
         cout << " | Department: " << department
@@ -70,10 +65,14 @@ public:
 
 
 
-int main() { 
+int main() {  
 
-    Doctor one("101", "Joel" "12", 2);
-    one.displayDetails();
-    
+    Doctor doc_1(4322, "Dr. Lowe", "Cardiology", 17); 
+    Nurse nurse_1(8902, "Janet Shores", "Pre-Natal", "Morning"); 
+
+    doc_1.displayDetails();
+
+    nurse_1.displayDetails();
+
     return 0;
 }
