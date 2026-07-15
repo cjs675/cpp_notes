@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string> 
-
 using namespace std;
 
 
@@ -19,7 +18,6 @@ public:
         cout << " | Name: " << name << " | ID: " << id; 
     }
 };
-
 
 class Doctor : public Staff {
 
@@ -41,7 +39,6 @@ public:
     }
 }; 
 
-
 class Nurse : public Staff {
 
 protected: 
@@ -62,8 +59,6 @@ public:
              << " | Shift: " << shiftTiming << endl;
     }
 };
-
-
 
 int main() {  
 
