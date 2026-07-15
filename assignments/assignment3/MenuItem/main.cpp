@@ -11,15 +11,22 @@ private:
     double price;
     int quantity;
 
-public: 
-    MenuItem() : itemName(""), price(0.00), quantity(0) {};
+public:  
+    // Parameterized constructor 
     MenuItem(const string& item, double price, int amount) 
-        : itemName(item), price(price), quantity(amount) {}  
-
+        : itemName(item), price(price), quantity(amount) {}   
+    /* 
+    * Method to display order cost, calulated as 
+    * price by quantity 
+    */
     void displayOrder() const {
         cout << itemName << " x " << quantity  << " = " << (price * quantity) << "\n";
     }
     
+    /*
+    * Method to returna item total as a
+    * cost of type double   
+    */
     double getItemTotal() const {
         return price * quantity;
     }
@@ -41,7 +48,10 @@ int main() {
 
     cout << "\n"; 
 
-    // loop to display list & calculate total 
+    /* For loop to display list & calculate total  
+    *  which iterates through every order of each 
+    *  individual item 
+    */
     for (int i = 0; i < 5; i++) { 
         orders[i].displayOrder();
         billTotal += orders[i].getItemTotal();
