@@ -24,7 +24,7 @@ public:
     }
     
     /*
-    * Method to returna item total as a
+    * Method to return item total as a
     * cost of type double   
     */
     double getItemTotal() const {
