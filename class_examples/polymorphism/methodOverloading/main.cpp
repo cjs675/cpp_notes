@@ -8,11 +8,10 @@ class Rectangle {
             int a;
             int b;
             
-            cout << "Enter a length: ";
-            cin >> a; 
-            cout << "Enter a width: ";
+            cout << "\nEnter a length & width: "; 
+            cin >> a;
             cin >> b;
-            cout << "Area = " << a * b << endl;
+            cout << "\nArea = " << a * b << endl;
         }
 
         int Area(int x, int y) {
@@ -28,13 +27,12 @@ class Rectangle {
             int b; 
             int c;
             
-            cout << "Enter 3 dimensions to calculate volume: ";
+            cout << "\nEnter 3 dimensions to calculate volume: ";
             cin >> a;
             cin >> b; 
             cin >> c;
 
-            cout << "Volume = " << a * b * c;
-            cout << endl;
+            cout << "\nVolume = " << a * b * c << endl; 
         }
         
         int Volume(int x, int y, int z) {
@@ -50,17 +48,16 @@ class Rectangle {
 
 int main() {
     Rectangle r1;
-    Rectangle r2;
-    Rectangle r3;
     
-    r1.Area();
-    r2.Area(5, 1);
-    r3.Area(5.5, 10.1);  
-
-    r1.Volume(); 
-    r2.Volume(5, 10, 6);
-    r3.Volume(5.2, 3.6, 8.4);
-
+    r1.Area(); 
+    r1.Volume();
+   
+    cout << "\n ------- Overloaded Method Calculations --------\n";
+    cout << "Area (int) = " << r1.Area(5, 12) << endl;
+    cout << "Area (double) = " << r1.Area(3.8, 10.1) << endl;
+    
+    cout << "Volume (int) = " << r1.Volume(5, 10, 15) << endl;
+    cout << "Volume (int) = " << r1.Volume(8.9, 12.77, 14.32) << endl;
 
     return 0;
 }
