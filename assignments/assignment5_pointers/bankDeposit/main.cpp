@@ -31,24 +31,24 @@ class Deposit {
 int main() {
     Deposit acc_1;
 
-    double balance, depositAm;  
+    double accountBalance, depositAm;  
 
     cout << "\nEnter Initial Balance: $";
-    cin >> balance;
+    cin >> accountBalance;
 
     cout << "\nEnter Deposit Amount: $";
     cin >> depositAm;
 
-    cout << "\nInitial Bank Balance: $" << balance << endl;
+    cout << "\nInitial Bank Balance: $" << accountBalance << endl;
 
-    acc_1.depositByValue(balance, depositAm);
-    cout << "\n[Value] After function call - Actual Balance: $" << balance << endl;
+    acc_1.depositByValue(accountBalance, depositAm);
+    cout << "\n[Value] After function call - Actual Balance: $" << accountBalance << endl;
 
-    acc_1.depositByReference(balance, depositAm);
-    cout << "\n[Reference] After function call - Actual Balance: $" << balance << endl;
+    acc_1.depositByReference(accountBalance, depositAm);
+    cout << "\n[Reference] After function call - Actual Balance: $" << accountBalance << endl;
 
-    acc_1.depositByPointer(&balance, depositAm);
-    cout << "\n[Pointer] After function call - Actual Balance: $" << balance << endl;
+    acc_1.depositByPointer(&accountBalance, depositAm);
+    cout << "\n[Pointer] After function call - Actual Balance: $" << accountBalance << endl;
 
 
     return 0;
