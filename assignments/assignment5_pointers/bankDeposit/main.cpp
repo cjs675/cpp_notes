@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-class Deposit {
+class BankAccount {
 
     public:     
-        Deposit () {}  
+        BankAccount () {}  
         
         // pass by value 
         // makes a local clone 
@@ -25,13 +25,18 @@ class Deposit {
         void depositByPointer(double *b, double depositAm) {
             *b = *b + depositAm;
             cout << "\n[Pointer] Inside function - Balance after deposit: $" << *b << endl;
-        }
+        } 
+
+        void withdrawlByReference(double &b, double wdAm) {
+            b = b - wdAm;
+            cout << "\n[Reference] Inside function - Balance after withdrawl: $" << b << endl;
+       }
 }; 
 
 int main() {
-    Deposit acc_1;
+    BankAccount acc_1;
 
-    double accountBalance, depositAm;  
+    double accountBalance, depositAm, withdrawAm;  
 
     cout << "\nEnter Initial Balance: $";
     cin >> accountBalance;
@@ -48,7 +53,14 @@ int main() {
     cout << "\n[Reference] After function call - Actual Balance: $" << accountBalance << endl;
 
     acc_1.depositByPointer(&accountBalance, depositAm);
-    cout << "\n[Pointer] After function call - Actual Balance: $" << accountBalance << endl;
+    cout << "\n[Pointer] After function call - Actual Balance: $" << accountBalance << endl; 
+
+    cout << "\nEnter Withdrawl Amount: $";
+    cin >> withdrawAm;
+
+    acc_1.withdrawlByReference(accountBalance, withdrawAm);
+    cout << "\n[Reference] After function call - Actual Balance: $" << accountBalance << endl;
+    
 
 
     return 0;
