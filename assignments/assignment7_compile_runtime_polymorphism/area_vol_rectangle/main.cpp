@@ -2,59 +2,7 @@
 using namespace std;
 
 class Rectangle {
-
-private:
-    int i_length;
-    int i_width;
-    int i_height;
-    float f_length;
-    float f_width;
-    float f_height;
-    double d_length;
-    double d_width;
-    double d_height;
-
 public:
-
-    // Getters & Setters
-    void setLength(int l) {
-        i_length = l;
-    }
-    void setWidth(int w) {
-        i_width = w;
-    }
-    void setHeight(int h) {
-        i_height = h;
-    }
-    void setLength(double l) {
-        d_length = l;
-    }
-    void setWidth(double w) {
-        d_width = w;
-    }
-    void setHeight(double h) {
-        d_height = h;
-    }
-
-
-    int getIntLength() {
-        return i_length;
-    }
-    int getIntWidth() {
-        return i_width;
-    }
-    int getIntHeight() {
-        return i_height;
-    }
-    double getDoubleLength() {
-        return d_length;
-    }
-    double getDoubleWidth() {
-        return d_width;
-    }
-    double getDoubleHeight() {
-        return d_height;
-    }
 
     // Calculates area using integers
     int calculateArea(int l, int w) {
@@ -82,10 +30,9 @@ public:
     }
 
     // Calculate volume using doubles
-    double calculateVolume(double l, double h, double w) {
+    double calculateVolume(double l, double w, double h) {
         return l * w * h;
     }
-
 };
 
 int main() {
