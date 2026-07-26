@@ -30,11 +30,12 @@ public:
         d_length = l;
     }
     void setWidth(double w) {
-        d_length = w;
+        d_width = w;
     }
     void setHeight(double h) {
-        d_length = h;
+        d_height = h;
     }
+
 
     int getIntLength() {
         return i_length;
@@ -89,13 +90,11 @@ public:
 
 int main() {
     Rectangle r1;
-    Rectangle r2;
-    Rectangle r3;
 
-    r1.calculateArea(10, 13);
-    r1.calculateVolume(5, 9, 8);
-    r1.calculateArea(15.2, 9.1);
-    r1.calculateVolume(8.19, 12.34, 29.902);
+    cout << r1.calculateArea(10, 13) << endl;
+    cout << r1.calculateVolume(5, 9, 8) << endl;
+    cout << r1.calculateArea(15.2, 9.1) << endl;
+    cout << r1.calculateVolume(8.19, 12.34, 29.902) << endl;
     
     return 0;
 }
