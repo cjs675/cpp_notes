@@ -39,3 +39,4 @@ obj/
 *.cmake 
 main 
 .main
+final_project/
